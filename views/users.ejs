@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="d-flex">
+
+<% users.forEach(val => { %>
+    <div class="card" style="width: 18rem;">
+        <img src="https://plus.unsplash.com/premium_photo-1696661111683-3cf24fadf088?auto=format&fit=crop&q=80&w=2052&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><%= val.username %></h5>
+            <p class="card-text"><%= val.email %></p>
+            <p class="card-text"><%= val.password %></p>
+            <p class="card-text">Likes: <%= val.likes.length %></p>
+            <a href="/likes/<%= val._id %>" class="btn btn-primary">Like</a>
+        </div>
+    </div>
+    
+<% }); %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
